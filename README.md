@@ -3,9 +3,9 @@ GAN evolution graph 2019 from [here](https://zhuanlan.zhihu.com/p/70033932).
 
 ![](paper_images/gan_h.jpg)
 
-This repository contains the pix2pixHD algorithms(proposed by NVIDIA) of DeepNude, and more importantly, the general image generation theory and practice behind DeepNude. This resource includes the TensorFlow2 implementation of image generation models such as pix2pix, CycleGAN, UGATIT, DCGAN, and VAE.
+This repository contains the pix2pixHD algorithms(proposed by NVIDIA) of [DeepNude](DeepNude_software_itself), and more importantly, the general image generation theory and practice behind DeepNude. This resource includes the TensorFlow2 (Pytorch | PaddlePaddle) implementation of image generation models such as [pix2pix](Pix2Pix), [CycleGAN](CycleGAN), UGATIT, [DCGAN](DCGAN), SinGAN and [VAE](Variational_Autoencoder).
 
-这个仓库包含DeepNude的pix2pixHD(由英伟达提出)算法，更重要的是DeepNude背后通用的图像生成理论与实践研究。本资源包含pix2pix、CycleGAN、UGATIT、DCGAN、VAE等图像生成模型的 [TensorFlow2](https://www.tensorflow.org/) 实现。
+这个仓库包含[DeepNude](DeepNude_software_itself)的pix2pixHD(由英伟达提出)算法，更重要的是DeepNude背后通用的图像生成理论与实践研究。本资源包含[pix2pix](Pix2Pix), [CycleGAN](CycleGAN), UGATIT, [DCGAN](DCGAN), SinGAN and [VAE](Variational_Autoencoder).等图像生成模型的 [TensorFlow2](https://www.tensorflow.org/) (Pytorch | PaddlePaddle) 实现。
 
 ---
 
@@ -17,8 +17,8 @@ This repository contains the pix2pixHD algorithms(proposed by NVIDIA) of DeepNud
 |Fake Image Generation and Image-to-Image Demo |试玩Demo|
 |DeepNude Algorithm: Normal to Pornography Image|由正常图像生成色情图像|
 |NSFW: Pornography to Normal Image, Pornographic Image Detection|由色情图像生成正常图像，色情图像检测|
-|Image Generation Theoretical Research|  图像生成理论研究|
-|Image Generation Practice Research|     图像生成实践研究|
+|GAN Image Generation Theoretical Research|  GAN 图像生成理论研究|
+|GAN Image Generation Practice Research|  GAN 图像生成实践研究|
 |DeepNude to DeepFakes|DeepNude 进阶 DeepFakes|
 |Future|					                     展望未来|
 
@@ -27,7 +27,7 @@ This repository contains the pix2pixHD algorithms(proposed by NVIDIA) of DeepNud
 ## What is DeepNude? 什么是 DeepNude?
 DeepNude uses a slightly modified version of the [pix2pixHD](https://github.com/NVIDIA/pix2pixHD) GAN architecture, quoted from deepnude_official. pix2pixHD is a general-purpose Image2Image technology proposed by NVIDIA. Obviously, DeepNude is the wrong application of artificial intelligence technology, but it uses Image2Image technology for researchers and developers working in other fields such as fashion, film and visual effects.
 
-DeepNude使用了一个稍微修改过的 [pix2pixHD](https://github.com/NVIDIA/pix2pixHD) GAN 架构。pix2pixHD是由NVIDIA提出的一种通用的Image2Image技术。显然，DeepNude是人工智能技术的错误应用，但它使用的Image2Image技术对于在时尚，电影和视觉效果等其他领域工作的研究人员和开发人员非常有用。
+[DeepNude](https://github.com/yuanxiaosc/DeepNude-an-Image-to-Image-technology/tree/master/DeepNude_software_itself)使用了一个稍微修改过的 [pix2pixHD](https://github.com/NVIDIA/pix2pixHD) GAN 架构。pix2pixHD是由NVIDIA提出的一种通用的Image2Image技术。显然，DeepNude是人工智能技术的错误应用，但它使用的Image2Image技术对于在时尚，电影和视觉效果等其他领域工作的研究人员和开发人员非常有用。
 
 ---
 
@@ -63,18 +63,21 @@ In the left side box, draw a cat as you imagine, and then click the process butt
 ## :underage: DeepNude Algorithm
 > DeepNude is a pornographic software that is forbidden by minors. If you are not interested in DeepNude itself, you can skip this section and see the general Image-to-Image theory and practice in the following chapters. DeepNude 是一款含有色情的软件，未成年人禁止使用。如果你对DeepNude本身不感兴趣，可以直接跳过本节，查看后面章节中通用的Image-to-Image理论与实践研究。
 
-+ [DeepNude_software_itself](DeepNude_software_itself) DeepNude software usage process and evaluation of advantages and disadvantages.
-+ ~~Official DeepNude Algorithm(Based on Pytorch)~~
+[DeepNude_software_itself](DeepNude_software_itself) content:
+1. Official DeepNude Algorithm(Based on Pytorch)
+2. DeepNude software usage process and evaluation of advantages and disadvantages.
+
 
 
 ### :+1: NSFW
 > Recognition and conversion of five types of images [porn, hentai, sexy, natural, drawings]. Correct application of image-to-image technology.
 
-NSFW(Not Safe/Suitable For Work) is a large-scale image dataset containing five categories of images [porn, hentai, sexy, natural, drawings]. Here, CycleGAN is used to convert different types of images, such as porn->natural. 使用CycleGAN神经网络模型实现 [porn, hentai, sexy, natural, drawings] 这些类别图像的转换，比如色情图像到安全/中性的图像转换。
+NSFW(Not Safe/Suitable For Work) is a large-scale image dataset containing five categories of images [porn, hentai, sexy, natural, drawings]. Here, CycleGAN is used to convert different types of images, such as porn->natural.
 
-[Click to try pornographic image detection Demo 点击尝试色情图片检测](https://nsfwjs.com/)
+使用CycleGAN神经网络模型实现 [porn, hentai, sexy, natural, drawings] 这些类别图像的转换，比如色情图像到安全/中性的图像转换。
 
-[Click Start NSFW Research](NSFW)
+1. [Click to try pornographic image detection Demo 点击尝试色情图片检测](https://nsfwjs.com/)
+2. [Click Start NSFW Research](NSFW)
 
 ---
 
@@ -151,7 +154,7 @@ UGATIT是一种新的无监督图像到图像转换方法，它以端到端的�
 
 ### 5. StyleGAN
 
-+ 论文 NVIDIA 2019 paper [A Style-Based Generator Architecture for Generative Adversarial Networks](https://arxiv.org/abs/1812.04948)
++ 论文 NVIDIA 2018 paper [A Style-Based Generator Architecture for Generative Adversarial Networks](https://arxiv.org/abs/1812.04948)
 + 代码 code [stylegan](https://github.com/NVlabs/stylegan)
 
 **效果**
@@ -170,6 +173,15 @@ StyleGAN 不仅可以生成假的图片source A 和 source B，还可以结合�
 |中等级|姿势、一般的面部形状和眼镜来自Source A|继承Source B中级的面部特征 ，如发型，张开/闭着的眼睛|
 |高等级（细微）|主要面部内容来自Source A|继承Source B高级面部特征，如颜色方案和微观结构|
 
+#### StyleGAN2
+Without increasing the amount of calculation of StyleGAN, while solving the image artifacts generated by StyleGAN and obtaining high-quality images with better details, StyleGAN2 implements a new SOTA for unconditional image modeling tasks.
+
++ 论文 NVIDIA 2019 paper [Analyzing and Improving the Image Quality of StyleGAN](https://arxiv.org/abs/1912.04958)
++ 代码 code [stylegan2](https://github.com/NVlabs/stylegan2)
++ Run in Google Colab [stylegan2](https://colab.research.google.com/drive/1ShgW6wohEFQtqs_znMna3dzrcVoABKIH)
+
+在不增加StyleGAN计算量的条件下，在解决了StyleGAN生成图像伪影的同时还能得到细节更好的高质量图像，StyleGAN2实现了无条件图像建模任务上新的 SOTA。
+
 ### 6. Image Inpainting 图像修复
 
 + 论文 NVIDIA 2018 paper [Image Inpainting for Irregular Holes Using Partial Convolutions](https://arxiv.org/abs/1804.07723) and [Partial Convolution based Padding](https://arxiv.org/abs/1811.11718).
@@ -181,7 +193,25 @@ StyleGAN 不仅可以生成假的图片source A 和 source B，还可以结合�
 
 In the image interface of [Image_Inpainting(NVIDIA_2018).mp4](https://github.com/yuanxiaosc/DeepNude-an-Image-to-Image-technology/raw/master/paper_images/Image_Inpainting(NVIDIA_2018).mp4) video, you only need to use tools to simply smear the unwanted content in the image. Even if the shape is very irregular, NVIDIA's model can “restore” the image with very realistic The picture fills the smeared blank. It can be described as a one-click P picture, and "no ps traces." The study was based on a team from Nvidia's Guilin Liu et al. who published a deep learning method that could edit images or reconstruct corrupted images, even if the images were worn or lost pixels. This is the current 2018 state-of-the-art approach.
 
-在 [Image_Inpainting(NVIDIA_2018).mp4](https://github.com/yuanxiaosc/DeepNude-an-Image-to-Image-technology/raw/master/paper_images/Image_Inpainting(NVIDIA_2018).mp4) 视频中左侧的操作界面，只需用工具将图像中不需要的内容简单涂抹掉，哪怕形状很不规则，NVIDIA的模型能够将图像“复原”，用非常逼真的画面填补被涂抹的空白。可谓是一键P图，而且“毫无ps痕迹”。该研究来自Nvidia的Guilin Liu等人的团队，他们发布了一种可以编辑图像或重建已损坏图像的深度学习方法，即使图像穿了个洞或丢失了像素。这是目前2018 state-of-the-art的方法。
+在 [Image_Inpainting(NVIDIA_2018).mp4](https://github.com/yuanxiaosc/DeepNude-an-Image-to-Image-technology/raw/master/paper_images/Image_Inpainting(NVIDIA_2018).mp4) 视频中左侧的操作界面，只需用工具将图像中不需要的内容简单涂抹掉，哪怕形状很不规则，NVIDIA的模型能够将图像“复原”，用非常逼真的画面填补被涂抹的空白。可谓是一键P图，而且“毫无ps痕迹”。该研究来自Nvidia的Guilin Liu等人的团队，他们发布了一种可以编辑图像或重建已损坏图像的深度学习方法，即使图像穿了个洞或丢失了像素。这是2018 state-of-the-art的方法。
+
+### 7. SinGAN
+ICCV2019 Best paper - Marr prize
+
++ 论文 Israel Institute of Technology 2019 paper [SinGAN: Learning a Generative Model from a Single Natural Image](https://arxiv.org/abs/1905.01164)
++ 主页 [SinGAN homepage](http://webee.technion.ac.il/people/tomermic/SinGAN/SinGAN.htm)
++ 代码 code [SinGAN-Pytorch](https://github.com/tamarott/SinGAN)
++ 视频展示 Video Show [SinGAN for single image animation](https://youtu.be/xk8bWLZk4DU)
++ [SinGAN 原理解析](https://www.jiqizhixin.com/articles/2019-10-29-2)
+
+**效果**
+
+![](paper_images/2019_Tamar_SinGAN_example.png)
+We introduce SinGAN, an unconditional generative model that can be learned from a single natural image. Our model is trained to capture the internal distribution of patches within the image, and is then able to generate high quality, diverse samples that carry the same visual content as the image. SinGAN contains a pyramid of fully convolutional GANs, each responsible for learning the patch distribution at a different scale of the image. This allows generating new samples of arbitrary size and aspect ratio, that have significant variability, yet maintain both the global structure and the fine textures of the training image. In contrast to previous single image GAN schemes, our approach is not limited to texture images, and is not conditional (i.e. it generates samples from noise). User studies confirm that the generated samples are commonly confused to be real images. We illustrate the utility of SinGAN in a wide range of image manipulation tasks.
+
+在这篇论文中，研究者介绍了一种无监督的生成模型 SinGAN，它以一种无条件约束的方式从单张自然图像中学习知识。经过训练，研究者的模型能捕捉图像块（patch）的内部分布，从而生成高质量、多样化的样本，并承载与训练图像相同的视觉内容。
+
+SinGAN 包含一个全卷积金字塔 GAN，金字塔的每一层负责学习不同比例的图像块分布。这样就能生成具有任意大小和横纵比的新样本，这种生成样本明显具有可变性，但同时又能保持真实图像的全局结构与精细纹理。与之前的单图像 GAN 相比，研究者的方法不仅能生成纹理图像，同时它还以一种无条件约束的方式生成。SinGAN 通过使用多尺度对抗训练方案，从多种尺度学习了图像块信息。这样一来，模型就可以生成新的真实图像样本，其中在创建新的目标属性和结构的同时还保留了原始的图像块分布信息。如上展示了不同尺度图像的生成效果。研究者在最后还表明，SinGAN 生成的图像经常被人类弄混，它们与真实图像没什么差别。
 
 ---
 
